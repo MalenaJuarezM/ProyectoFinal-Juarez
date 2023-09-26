@@ -6,6 +6,7 @@ import "./Navbar.css"
 export const Navbar = () => {
     return (
         <div className="navbar">
+
             <img src="https://res.cloudinary.com/dqy0anqjn/image/upload/v1695570628/Logo1_uhakbd.png" alt="Logo" className="logo" />
             <Typography align="center" variant="h5" color={"primary.main"}>
                 <ul className="menu">
@@ -18,5 +19,6 @@ export const Navbar = () => {
             </Typography>
             <CartWidget />
         </div>
+
     )
 }

@@ -1,12 +1,14 @@
 import "./cartWidget.css"
-import { BsCart2 } from "react-icons/bs"
+import { Badge } from "@mui/material"
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 export const CartWidget = () => {
     return (
-        <div>
-            <p className="items">0</p>
-            <BsCart2 className="cart" />
-        </div>
+        <>
+            <Badge showZero badgeContent={0} color="secondary">
+                <ShoppingCartIcon color="action" />
+            </Badge>
+        </>
 
     )
 }
