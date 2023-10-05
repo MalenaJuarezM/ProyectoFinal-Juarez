@@ -3,6 +3,7 @@ import { Typography } from "@mui/material";
 import { CartWidget } from "../../common/CartWidget/CartWidget"
 import "./Navbar.css"
 
+
 export const Navbar = () => {
     return (
         <div className="navbar">

@@ -6,9 +6,10 @@ export const CartWidget = () => {
     return (
         <>
             <Badge showZero badgeContent={0} color="secondary">
-                <ShoppingCartIcon color="action" />
+                <ShoppingCartIcon fontSize="large" color="secondary" />
             </Badge>
         </>
+
 
     )
 }
