@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-#root {
+body {
   background-color: #efe6d6;
-  height: 100%;
 }

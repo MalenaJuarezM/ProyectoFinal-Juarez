@@ -1,19 +1,29 @@
 .navbar {
-  padding: 1rem;
+  height: 80px;
+  padding: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgb(139, 137, 137);
   background-color: #c0a98a;
 }
 .logo {
-  width: 300px;
-  padding: 30px;
+  width: 250px;
 }
 
 .menu {
   list-style-type: none;
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+li {
+  margin: 5px;
+  font-size: 20px;
+  color: #44474c;
+  letter-spacing: 1px;
+}
+
+.a {
+  text-decoration: none;
 }

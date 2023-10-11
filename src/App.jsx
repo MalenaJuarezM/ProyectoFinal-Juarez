@@ -1,19 +1,25 @@
-//import { Navbar } from './components/layout/Navbar/Navbar'
-import { ItemListContainer } from './components/pages/itemListContainer/ItemListContainer'
+import { BrowserRouter } from "react-router-dom"
 import { ThemeProvider } from '@emotion/react'
 import { customTheme } from './themeConfig'
-import ResponsiveAppBar from './components/layout/navbar/ResponsiveAppBar'
-import ItemDetailContainer from './components/pages/ItemDetailContainer/ItemDetailContainer'
+import AppRouter from "./router/AppRouter"
+
 
 function App() {
 
   return (
-    <ThemeProvider theme={customTheme}>
-      {/* <Navbar /> */}
-      <ResponsiveAppBar />
-      {/* <ItemListContainer /> */}
-      <ItemDetailContainer />
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={customTheme}>
+        <AppRouter />
+      </ThemeProvider>
+    </BrowserRouter>
+
+
+    //<ThemeProvider theme={customTheme}>
+    //{/* <Navbar /> */ }
+    //<ResponsiveAppBar />
+    //{/* <ItemDetailContainer /> */ }
+    //{/* <Footer /> */ }
+    //</ThemeProvider>
   )
 }
 
