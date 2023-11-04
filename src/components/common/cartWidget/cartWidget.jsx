@@ -1,4 +1,3 @@
-import "./cartWidget.css";
 import { Badge } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useContext } from "react";
