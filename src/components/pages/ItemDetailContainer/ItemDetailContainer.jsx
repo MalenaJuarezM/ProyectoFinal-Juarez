@@ -1,40 +1,64 @@
-import { useEffect, useState } from "react"
-import { products } from "../../../productsMock"
-import ItemDetail from "./ItemDetail"
-import { useParams } from "react-router-dom"
+import { useContext, useEffect, useState } from "react";
+import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
+import { CartContext } from "../../../context/cartContext";
+import Swal from "sweetalert2";
+import { getDoc, collection, doc } from "firebase/firestore";
+import { database } from "../../../firebaseConfig";
 
 const ItemDetailContainer = () => {
+  const [selectedProduct, setSelectedProduct] = useState({});
 
-    const [selectedProduct, setSelectedProduct] = useState({})
+  const { id } = useParams();
 
-    const { id } = useParams()
+  const { addToCart, getQuantityById } = useContext(CartContext);
 
-    useEffect(() => {
-        let producto = products.find((product) => product.id === +id)
+  let totalQuantity = getQuantityById(id);
 
-        const getProduct = new Promise((resolve, reject) => {
-            resolve(producto)
-            //reject("Error")
+  useEffect(() => {
+    let itemCollection = collection(database, "products");
 
-        })
+    let refDoc = doc(itemCollection, id);
 
-        getProduct.then((res) => setSelectedProduct(res)).catch((err) => console.log(err))
+    getDoc(refDoc).then((respuesta) => {
+      setSelectedProduct({ id: respuesta.id, ...respuesta.data() });
+    });
+  }, [id]);
 
-    }, [id])
+  const onAdd = (cantidad) => {
+    let product = {
+      ...selectedProduct,
+      quantity: cantidad,
+    };
 
-    const onAdd = (cantidad) => {
-        let obj = {
-            ...selectedProduct,
-            quantity: cantidad,
-        }
+    if (cantidad > 0) {
+      addToCart(product);
 
-        console.log(obj)
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "El producto se agregó al carrito.",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else {
+      Swal.fire({
+        position: "center",
+        icon: "warning",
+        title: "Debes indicar una cantidad.",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
+  };
 
-    return (
-        <ItemDetail selectedProduct={selectedProduct} onAdd={onAdd} />
+  return (
+    <ItemDetail
+      selectedProduct={selectedProduct}
+      onAdd={onAdd}
+      initial={totalQuantity}
+    />
+  );
+};
 
-    )
-}
-
-export default ItemDetailContainer
+export default ItemDetailContainer;

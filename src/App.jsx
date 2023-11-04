@@ -2,24 +2,18 @@ import { BrowserRouter } from "react-router-dom"
 import { ThemeProvider } from '@emotion/react'
 import { customTheme } from './themeConfig'
 import AppRouter from "./router/AppRouter"
-
+import CartContextComponent from "./context/cartContext"
 
 function App() {
 
   return (
     <BrowserRouter>
       <ThemeProvider theme={customTheme}>
-        <AppRouter />
+        <CartContextComponent>
+          <AppRouter />
+        </CartContextComponent>
       </ThemeProvider>
     </BrowserRouter>
-
-
-    //<ThemeProvider theme={customTheme}>
-    //{/* <Navbar /> */ }
-    //<ResponsiveAppBar />
-    //{/* <ItemDetailContainer /> */ }
-    //{/* <Footer /> */ }
-    //</ThemeProvider>
   )
 }
 

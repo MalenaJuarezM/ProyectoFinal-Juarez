@@ -1,8 +1,16 @@
-# React + Vite
+# Este es mi proyecto final del curso de REACT.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Es un e-commerce ficticio de una tienda de muebles.
 
-Currently, two official plugins are available:
+### Para realizarlo se utilizaron las siguientes herramientas:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- MaterialUI
+- Formik
+- Yup
+
+#### El logo de mi tienda es el siguiente:
+
+![](https://res.cloudinary.com/dqy0anqjn/image/upload/v1695570628/Logo1_uhakbd.png)
+
+#### Las imágenes de los muebles fueron sacadas de la siguiente tienda online [sklum.com](https://www.sklum.com/es/).
