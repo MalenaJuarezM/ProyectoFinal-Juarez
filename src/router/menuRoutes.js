@@ -1,6 +1,5 @@
-
 import CartContainer from "../components/pages/cartContainer/CartContainer";
-import CheckoutFormikContainer from "../components/pages/checkoutContainer/CheckoutFormikContainer";
+import CheckoutFormikContainer from "../components/pages/checkoutFormikContainer/CheckoutFormikContainer";
 import ItemDetailContainer from "../components/pages/itemDetailContainer/ItemDetailContainer";
 import { ItemListContainer } from "../components/pages/itemListContainer/itemListContainer";
 
