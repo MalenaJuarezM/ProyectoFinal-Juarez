@@ -12,7 +12,7 @@ import { CartContext } from "../../../context/cartContext";
 import Swal from "sweetalert2";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const CartCointainer = () => {
+const CartContainer = () => {
   const { cart, clearCart, deleteProductById, getTotalPrice } =
     useContext(CartContext);
 
@@ -131,4 +131,4 @@ const CartCointainer = () => {
   );
 };
 
-export default CartCointainer;
+export default CartContainer;
