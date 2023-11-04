@@ -24,7 +24,6 @@ const CheckoutFormikContainer = () => {
       total,
       time: serverTimestamp(),
     };
-    console.log(orden);
 
     const ordersCollection = collection(database, "ordenes");
     addDoc(ordersCollection, orden).then((res) => setOrderId(res.id));

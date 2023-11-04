@@ -21,7 +21,6 @@ export const CheckoutContainer = () => {
 
   const enviarFormulario = (e) => {
     e.preventDefault();
-    console.log(userInfo);
 
     let order = {
       buyer: userInfo,
@@ -29,8 +28,6 @@ export const CheckoutContainer = () => {
       total,
       time: serverTimestamp(),
     };
-
-    console.log(order);
   };
 
   return (
