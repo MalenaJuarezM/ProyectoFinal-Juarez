@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import BarLoader from "react-spinners/BarLoader";
 import { getDocs, collection, query, where, addDoc } from "firebase/firestore";
 import { database } from "../../../firebaseConfig";
-import { Button } from "@mui/material";
 /*import { products } from "../../../productsMock";*/
 
 export const ItemListContainer = () => {

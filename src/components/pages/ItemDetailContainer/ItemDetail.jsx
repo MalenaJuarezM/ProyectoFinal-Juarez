@@ -5,18 +5,10 @@ import {
   CardContent,
   CardMedia,
   Typography,
-  IconButton,
 } from "@mui/material";
 import { CounterContainer } from "../../common/counter/counterContainer";
-import DeleteIcon from "@mui/icons-material/Delete";
-import { CartContext } from "../../../context/cartContext";
-import { useContext } from "react";
 
 const ItemDetail = ({ selectedProduct, onAdd, initial }) => {
-  const { deleteProductById } = useContext(CartContext);
-
-  const eliminar = () => {};
-
   return (
     <>
       <Card
